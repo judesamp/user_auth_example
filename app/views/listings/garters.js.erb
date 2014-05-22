@@ -1,0 +1,9 @@
+$('.garters_div').fadeOut('slow', function() {
+
+  $('.garters_div').html('');
+
+  $('.garters_div').html("<%= escape_javascript render(:partial => 'garters')%>");
+
+});
+
+$('.garters_div').fadeIn('slow');

@@ -1,0 +1,10 @@
+$('.favors_div').fadeOut('slow', function() {
+
+  $('.favors_div').html('');
+
+  $('.favors_div').html("<%= escape_javascript render(:partial => 'favors')%>");
+
+});
+
+$('.favors_div').fadeIn('slow');
+

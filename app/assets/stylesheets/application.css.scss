@@ -14,7 +14,39 @@
  *= require_self
  */
 
+@import "bootstrap";
+
+body, html {
+  width: 100%;
+}
 .small {
 	font-size: 10px;
 	float: right;
 }
+
+.third {
+  height: 220px;
+}
+
+.div_holder {
+  width: 100%;
+}
+
+.center_text {
+  text-align: center;
+  height: 300px;
+}
+
+.title {
+  display: inline !important;
+  vertical-align: top;
+}
+
+.nav_buttons {
+  text-align: center;
+}
+
+.blue {
+  background: lightblue;
+}
+

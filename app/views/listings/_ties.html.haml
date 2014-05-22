@@ -1,0 +1,9 @@
+.ties_div.center_text
+  .listing_header
+    %h1.title Ties
+    %span.btn.btn-default.next_ties_images{data: { "image-offset" => @offset }}
+      Next Set of Images
+  - @ties.each do |listing|
+    = link_to (image_tag listing['Images'][0]["url_170x135"], class: "third"), listing['url']  
+  %br
+  %br

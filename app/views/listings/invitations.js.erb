@@ -1,0 +1,9 @@
+$('.invitation_div').fadeOut('slow', function() {
+
+  $('.invitation_div').html('');
+  
+  $('.invitation_div').html("<%= escape_javascript render(:partial => 'invitations')%>");
+
+});
+
+$('.invitation_div').fadeIn('slow');

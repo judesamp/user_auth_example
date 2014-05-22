@@ -1,0 +1,7 @@
+$('.accessories_div').fadeOut(1000, function() {
+  
+  $('.accessories_div').html("<%= escape_javascript render(:partial => 'accessories')%>");
+
+});
+
+$('.accessories_div').fadeIn(1000);

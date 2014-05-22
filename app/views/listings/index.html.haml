@@ -1,0 +1,87 @@
+.nav_buttons
+  %span.btn.btn-default.invitations_button
+    Invitations
+  %span.btn.btn-default.favors_button
+    Favors
+  %span.btn.btn-default.ties_button
+    Ties
+  %span.btn.btn-default.flowers_button
+    Flowers
+  %span.btn.btn-default.accessories_button
+    Accessories
+  %span.btn.btn-default.garters_button
+    Garters
+  %br
+  %br
+  %br
+  %br
+.div_holder
+  
+  .invitation_div.center_text
+    .listing_header
+      %h1.title Invitations
+      %span.btn.btn-default.next_invitations_images{data: { "image-offset" => "0" }}
+        Next Set of Images
+      %br
+    - @invitations.each do |listing|
+      = link_to (image_tag listing['Images'][0]["url_fullxfull"], class: "third"), listing['url']
+    %br
+    %br
+  .favors_div.center_text
+    .listing_header
+      %h1.title Favors
+      %span.btn.btn-default.next_favors_images{data: { "image-offset" => "0" }}
+        Next Set of Images
+    - @favors.each do |listing|
+      = link_to (image_tag listing['Images'][0]["url_fullxfull"], class: "third"), listing['url']    
+    %br
+    %br
+  .ties_div.center_text
+    .listing_header
+      %h1.title Ties
+      %span.btn.btn-default.next_ties_images{data: { "image-offset" => "0" }}
+        Next Set of Images
+    - @ties.each do |listing|
+      = link_to (image_tag listing['Images'][0]["url_fullxfull"], class: "third"), listing['url']    
+    %br
+    %br
+  .flowers_div.center_text
+    .listing_header
+      %h1.title Flowers
+      %span.btn.btn-default.next_flowers_images{data: { "image-offset" => "0" }}
+        Next Set of Images
+    - @flowers.each do |listing|
+      = image_tag listing['Images'][0]["url_fullxfull"], class: "third"
+    %br
+    %br
+  .accessories_div.center_text
+    .listing_header
+      %h1.title Accessories
+      %span.btn.btn-default.next_accessories_images{data: { "image-offset" => "0" }}
+        Next Set of Images
+    - @accessories.each do |listing|
+      = link_to (image_tag listing['Images'][0]["url_fullxfull"], class: "third"), listing['url']    
+    %br
+    %br
+  .garters_div.center_text
+    .listing_header
+      %h1.title Garters
+      %span.btn.btn-default.next_garters_images{data: { "image-offset" => "0" }}
+        Next Set of Images
+    - @garters.each do |listing|
+      = link_to (image_tag listing['Images'][0]["url_fullxfull"], class: "third"), listing['url']    
+    %br
+    %br
+    %br
+
+
+  .teams_div.center_text
+    %h1 A few wedding teams to check out
+    -@teams.each do |team|
+      - team_id = team['group_id']
+      = link_to team['name'], "http://etsy.com/teams/#{team_id}"
+      %br
+
+
+
+

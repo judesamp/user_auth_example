@@ -1,0 +1,9 @@
+.flowers_div.center_text
+  .listing_header
+    %h1.title Flowers
+    %span.btn.btn-default.next_flowers_images{data: { "image-offset" => @offset }}
+      Next Set of Images
+  - @flowers.each do |listing|
+    = link_to (image_tag listing['Images'][0]["url_170x135"], class: "third"), listing['url']  
+  %br
+  %br

@@ -1,0 +1,7 @@
+$('.ties_div').fadeOut('slow', function() {
+
+  $('.ties_div').html("<%= escape_javascript render(:partial => 'ties')%>");
+
+});
+
+$('.ties_div').fadeIn('slow');
