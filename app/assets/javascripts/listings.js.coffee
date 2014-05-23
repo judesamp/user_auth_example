@@ -14,7 +14,7 @@ $ ->
 
   $(document).on 'click', '.flowers_button', -> 
     $('.flowers_div').fadeToggle();
-    $('.flower_button').toggleClass('blue');
+    $('.flowers_button').toggleClass('blue');
 
   $(document).on 'click', '.accessories_button', -> 
     $('.accessories_div').fadeToggle();
@@ -23,7 +23,6 @@ $ ->
   $(document).on 'click', '.garters_button', -> 
     $('.garters_div').fadeToggle();
     $('.garters_button').toggleClass('blue');
-
 
   $(document).on 'click', '.next_invitations_images', ->
     current_offset = $(this).attr('data-image-offset');
