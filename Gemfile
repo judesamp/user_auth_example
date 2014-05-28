@@ -38,6 +38,7 @@ gem 'resque'
 gem 'twitter'
 gem 'doorkeeper'
 gem 'oauth2'
+gem 'twitter_oauth'
 
 
 # Use unicorn as the app server

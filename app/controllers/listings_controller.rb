@@ -1,13 +1,13 @@
 class ListingsController < ApplicationController
 
   def index
+    $redis.set("images", ImagePreloader.perform(3, "invitations").to_json)
     @invitations = listing_etsy_request("invitations")
     @favors = listing_etsy_request("favors")
     @ties = listing_etsy_request("ties")
     @flowers = listing_etsy_request("flowers")
     @accessories = listing_etsy_request("accessories")
     @garters = listing_etsy_request("garters")
-
     @teams = HTTParty.get("https://openapi.etsy.com/v2/teams?keywords=wedding&limit=3&api_key=#{Rails.application.secrets.etsy_api_key}")["results"]
   end
 
@@ -22,14 +22,13 @@ class ListingsController < ApplicationController
   end
 
   def apply_offset(offset)
-    @offset = offset + 3
+    offset + 3
   end
 
-
   def invitations
-    offset = apply_offset(params[:offset].to_i)
-    @invitations = etsy_offset_request(offset, "invitations")
-    
+    @offset = apply_offset(params[:offset].to_i)
+    @invitations = JSON.parse($redis.get('images'))
+    $redis.set("images", ImagePreloader.perform(@offset, "invitations").to_json)
     respond_to do |format|
       format.js {}
     end

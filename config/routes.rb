@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  use_doorkeeper
   get "login" => "sessions#new"
   get "logout" => "sessions#destroy"
   resources :users
@@ -22,4 +24,13 @@ Rails.application.routes.draw do
     #pattern :wishlists/:wishlist_id/items/:id
 
   end
+
+
+  get "github_auth" => "github#authenticate"
+  get "github_auth/callback" => "github#callback"
+  post "create_gist" => "github#create_gist"
+
+  get "twitter_auth" => "twitter#authenticate"
+  get "twitter_auth/callback" => "twitter#callback"
+
 end
