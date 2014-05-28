@@ -33,7 +33,12 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 gem 'httparty'
 gem 'bootstrap-sass', '~> 3.1.1'
-gem 'resque', '~> 2.0.0.pre.1', github: 'resque/resque'
+gem 'delayed_job_active_record'
+gem 'resque'
+gem 'twitter'
+gem 'doorkeeper'
+gem 'oauth2'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
